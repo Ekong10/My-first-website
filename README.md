@@ -339,6 +339,312 @@ Great fact you should know
                 nextFact();
             }
         });
-    </script>
+    </script><style>
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow-x:hidden;
+    transition:background 0.8s ease-in-out;
+}
+
+/* Animated Particles Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px);
+    background-size:50px 50px;
+    animation:moveParticles 20s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes moveParticles{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+/* Main Container */
+.container{
+    max-width:600px;
+    width:100%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:50px 40px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    text-align:center;
+    animation:
+        slideIn 0.8s ease-out,
+        floatCard 5s ease-in-out infinite;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* Heading */
+h1{
+    color:white;
+    margin-bottom:30px;
+    font-size:2.2em;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7),
+        0 0 20px rgba(102,126,234,0.8),
+        0 0 40px rgba(118,75,162,0.8);
+}
+
+/* Category Badge */
+.category{
+    display:inline-block;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:0.9em;
+    font-weight:600;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Fact Box */
+.fact{
+    font-size:1.3em;
+    line-height:1.8;
+    color:white;
+    margin-bottom:40px;
+    min-height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    animation:fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Buttons */
+.button-group{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:14px 30px;
+    font-size:1em;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:all 0.3s ease;
+}
+
+/* Next Button */
+.btn-next{
+    flex:1;
+    min-width:150px;
+    color:white;
+    background:linear-gradient(
+        270deg,
+        #667eea,
+        #764ba2,
+        #00c9ff,
+        #667eea
+    );
+    background-size:400% 400%;
+    animation:gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Copy Button */
+.btn-copy{
+    flex:1;
+    min-width:150px;
+    background:#f39c12;
+    color:white;
+}
+
+/* Button Hover Effects */
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.4),
+        0 0 30px rgba(102,126,234,0.6);
+}
+
+button:active{
+    transform:translateY(-1px);
+}
+
+/* Copy Notification */
+.copy-feedback{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#27ae60;
+    color:white;
+    padding:15px 25px;
+    border-radius:10px;
+    opacity:0;
+    transition:opacity 0.3s ease;
+    pointer-events:none;
+    z-index:1000;
+}
+
+.copy-feedback.show{
+    opacity:1;
+}
+
+/* Background Themes */
+.bg-space{
+    background:
+        linear-gradient(
+            135deg,
+            #0f0c29,
+            #302b63,
+            #24243e
+        );
+}
+
+.bg-ocean{
+    background:
+        linear-gradient(
+            135deg,
+            #0077be,
+            #00a8e8,
+            #00c9ff
+        );
+}
+
+.bg-nature{
+    background:
+        linear-gradient(
+            135deg,
+            #134e5e,
+            #71b280
+        );
+}
+
+.bg-history{
+    background:
+        linear-gradient(
+            135deg,
+            #8b4513,
+            #d2691e,
+            #cd853f
+        );
+}
+
+.bg-science{
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+}
+
+.bg-technology{
+    background:
+        linear-gradient(
+            135deg,
+            #0f2027,
+            #203a43,
+            #2c5364
+        );
+}
+
+.bg-health{
+    background:
+        linear-gradient(
+            135deg,
+            #e74c3c,
+            #ecf0f1
+        );
+}
+
+/* Mobile Responsive */
+@media(max-width:600px){
+
+    .container{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:1.7em;
+    }
+
+    .fact{
+        font-size:1.1em;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+}
+</style>
 </body>
 </html>
