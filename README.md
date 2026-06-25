@@ -926,3 +926,324 @@ button{
 }
 
 </style>
+<style>
+
+/* =========================
+   PREMIUM GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Inter, sans-serif;
+    overflow:hidden;
+    background:#050816;
+    position:relative;
+}
+
+/* Animated Gradient Background */
+body::before{
+    content:"";
+    position:absolute;
+    inset:-50%;
+    background:
+        radial-gradient(circle at 20% 20%, #4f46e5 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #06b6d4 0%, transparent 25%),
+        radial-gradient(circle at 50% 80%, #9333ea 0%, transparent 30%);
+    animation:rotateBg 25s linear infinite;
+    opacity:.8;
+}
+
+@keyframes rotateBg{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.container{
+    position:relative;
+    width:100%;
+    max-width:750px;
+
+    padding:60px;
+
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:32px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.5),
+        inset 0 1px 1px rgba(255,255,255,.1);
+
+    z-index:2;
+
+    animation:appear .9s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Glow Border */
+
+.container::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.8),
+            rgba(6,182,212,.5),
+            rgba(147,51,234,.8)
+        );
+
+    z-index:-1;
+
+    filter:blur(15px);
+    opacity:.4;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+    font-size:3.5rem;
+    font-weight:900;
+    text-align:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #a5b4fc,
+            #67e8f9
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#94a3b8;
+    font-size:1.05rem;
+    margin-bottom:40px;
+}
+
+/* =========================
+   CATEGORY TAG
+========================= */
+
+.category{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+/* =========================
+   FACT CARD
+========================= */
+
+.fact{
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    min-height:180px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:1.3rem;
+    line-height:1.9;
+
+    transition:.4s ease;
+
+    margin-bottom:35px;
+}
+
+.fact:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(99,102,241,.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-group{
+    display:flex;
+    gap:18px;
+}
+
+button{
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-weight:700;
+    font-size:1rem;
+
+    transition:.35s ease;
+}
+
+/* Main Button */
+
+.btn-next{
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    color:white;
+
+    box-shadow:
+        0 12px 35px rgba(99,102,241,.4);
+}
+
+.btn-next:hover{
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(99,102,241,.55);
+}
+
+/* Secondary Button */
+
+.btn-copy{
+    background:
+        rgba(255,255,255,.08);
+
+    color:white;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+}
+
+.btn-copy:hover{
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.copy-feedback{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    background:#10b981;
+
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.copy-feedback.show{
+    opacity:1;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .container{
+        padding:35px 25px;
+    }
+
+    h1{
+        font-size:2.4rem;
+    }
+
+    .fact{
+        font-size:1.05rem;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+}
+
+</style>
