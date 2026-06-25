@@ -339,4 +339,4 @@ Great fact you should know
                 nextFact();
             }
         });
-    </script>
+    </script/>
