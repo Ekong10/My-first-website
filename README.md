@@ -1247,3 +1247,117 @@ button{
 }
 
 </style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* TITLE */
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* CATEGORY */
+.category {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* FACT */
+.fact {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-next {
+    background: #667eea;
+    color: white;
+}
+
+.btn-next:hover {
+    background: #5563d6;
+}
+
+.btn-copy {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-copy:hover {
+    background: #e67e22;
+}
+
+/* COPY MESSAGE */
+.copy-feedback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    display: none;
+}
+
+.copy-feedback.show {
+    display: block;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
