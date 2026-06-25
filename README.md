@@ -207,7 +207,7 @@ Great fact you should know
                 width: 100%;
             }
         }
-    </style/>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -339,4 +339,4 @@ Great fact you should know
                 nextFact();
             }
         });
-    </script/>
+    </script><style>
