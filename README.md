@@ -340,33 +340,3 @@ Great fact you should know
             }
         });
     </script/>
-.btn-next {
-    background: linear-gradient(
-        270deg,
-        #667eea,
-        #764ba2,
-        #00c9ff,
-        #667eea
-    );
-    background-size: 400% 400%;
-    animation: gradientMove 6s ease infinite;
-}
-
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}h1 {
-    color: white;
-    font-size: 2.2em;
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.6),
-        0 0 20px rgba(102,126,234,0.7),
-        0 0 40px rgba(118,75,162,0.7);
-}
